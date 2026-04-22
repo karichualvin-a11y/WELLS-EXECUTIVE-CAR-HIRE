@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Wells Executive | Premium Luxury Car Hire</title>
+  <!-- Google Fonts + modern reset -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8fafc;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      line-height: 1.5;
+      color: #0a0c12;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ========= HERO SECTION (Luxury Dark Elegance) ========= */
+    .hero {
+      background: linear-gradient(135deg, #0b1120 0%, #111827 100%);
+      color: white;
+      padding: 3rem 0 4rem 0;
+      border-bottom: 1px solid rgba(255, 215, 150, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 180, 60, 0.08) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      max-width: 720px;
+    }
+
+    .brand-badge {
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #f5b042;
+      font-weight: 500;
+      background: rgba(245, 176, 66, 0.12);
+      display: inline-block;
+      width: fit-content;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      background: linear-gradient(to right, #ffffff, #e8e2d0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-tagline {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #e2e8f0;
+      border-left: 4px solid #f5b042;
+      padding-left: 1rem;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 560px;
+      margin-top: 0.25rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 48px;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: #f5b042;
+      color: #0b1120;
+      box-shadow: 0 8px 20px rgba(245, 176, 66, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: #ffbf5e;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px rgba(245, 176, 66, 0.3);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      color: white;
+    }
+
+    .btn-outline-light:hover {
+      border-color: #f5b042;
+      background: rgba(245, 176, 66, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .phone-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(4px);
+      padding: 0.7rem 1.5rem;
+      border-radius: 60px;
+      width: fit-content;
+      border: 1px solid rgba(255,215,150,0.3);
+    }
+
+    /* ===== FLEET PREVIEW & FULL FLEET GRID ===== */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.3px;
+      color: #0f172a;
+    }
+
+    .section-sub {
+      color: #475569;
+      max-width: 650px;
+      margin-bottom: 2rem;
+      border-left: 3px solid #f5b042;
+      padding-left: 1rem;
+    }
+
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .car-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border: 1px solid #eef2f6;
+    }
+
+    .car-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 40px -16px rgba(0, 0, 0, 0.15);
+    }
+
+    .car-img {
+      background: linear-gradient(145deg, #f1f5f9, #e6edf4);
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+    }
+
+    .car-info {
+      padding: 1.4rem;
+    }
+
+    .car-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .car-desc {
+      color: #334155;
+      font-size: 0.85rem;
+      margin: 0.4rem 0;
+    }
+
+    .price {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #0f172a;
+      margin-top: 0.6rem;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .price small {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #5b6e8c;
+    }
+
+    .badge-type {
+      background: #fef9e6;
+      color: #b45309;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      width: fit-content;
+      margin-bottom: 8px;
+    }
+
+    /* Land Cruiser spotlight section (detailed description) */
+    .spotlight {
+      background: linear-gradient(110deg, #fefaf0 0%, #ffffff 100%);
+      border-radius: 2rem;
+      padding: 2.5rem;
+      margin: 2rem 0 2rem;
+      border: 1px solid #ffe6bf;
+      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+    }
+
+    .spotlight-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .spotlight-icon {
+      font-size: 5rem;
+      background: #0b1120;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      background: linear-gradient(145deg, #1f2a3e, #0f172a);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    }
+
+    .spotlight-text {
+      flex: 1;
+    }
+
+    .spotlight-text h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0b1120;
+      margin-bottom: 0.5rem;
+    }
+
+    .spotlight-text p {
+      color: #2d3a4b;
+      margin-bottom: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .feature-list span {
+      background: #e9eef3;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1f2a44;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(110deg, #0f172a 0%, #1a2638 100%);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      margin: 2rem 0 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.8rem;
+      color: white;
+    }
+
+    .btn-cta {
+      background: #f5b042;
+      color: #0f172a;
+      padding: 0.9rem 2.4rem;
+      font-weight: 700;
+      border-radius: 44px;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn-cta:hover {
+      background: #ffc55a;
+      transform: scale(1.02);
+    }
+
+    /* Footer */
+    footer {
+      background: #0a0f1c;
+      color: #9ca3af;
+      padding: 2.5rem 0 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #1e2a3a;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #f5b042, #e0a035);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #f5b042;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      border-top: 1px solid #1e293b;
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 780px) {
+      .hero h1 { font-size: 2.4rem; }
+      .hero-tagline { font-size: 1.1rem; }
+      .btn-group .btn { padding: 0.7rem 1.4rem; }
+      .spotlight-inner { flex-direction: column; text-align: center; }
+      .feature-list { justify-content: center; }
+    }
+
+    /* modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-card {
+      background: white;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      position: relative;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+    }
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="brand-badge">✦ EXECUTIVE FLEET KENYA ✦</div>
+      <h1>WELLS<br>EXECUTIVE</h1>
+      <div class="hero-tagline">Experience Comfort, Class & Reliability</div>
+      <div class="hero-desc">
+        Premium luxury car hire for business, travel, or special occasions. 
+        Well-maintained fleet with competitive daily rates.
+      </div>
+      <div class="btn-group">
+        <a href="#full-fleet" class="btn btn-primary">VIEW FULL FLEET →</a>
+        <a href="#booking" class="btn btn-outline-light">BOOK NOW ✦</a>
+      </div>
+      <div class="phone-number">
+        <span>📞</span> Call 0717-460-979
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL FLEET SECTION (all cars with exact rates) -->
+  <div class="container" id="full-fleet">
+    <div style="margin-top: 3rem;">
+      <h2 class="section-title">Our premium fleet</h2>
+      <div class="section-sub">Luxury, power, and comfort — choose your ride for any terrain or occasion</div>
+    </div>
+    <div class="fleet-grid" id="fleetGrid"></div>
+  </div>
+
+  <!-- LAND CRUISER 200 SERIES SPOTLIGHT (detailed description as requested) -->
+  <div class="container">
+    <div class="spotlight" id="landcruiser-spotlight">
+      <div class="spotlight-inner">
+        <div class="spotlight-icon">🐾🏔️</div>
+        <div class="spotlight-text">
+          <h3>Land Cruiser 200 Series – The Beast of Power & Luxury</h3>
+          <p>Experience luxury, power, and comfort like never before. Whether it’s a road trip, airport transfer, corporate event, or a special occasion, our Land Cruiser 200 Series has you covered. This beast delivers unmatched performance and elegance.</p>
+          <div class="feature-list">
+            <span>🏞️ Spacious & comfortable for family or executive travel</span>
+            <span>🌍 Smooth ride on any terrain – city roads or off-road adventures</span>
+            <span>🧼 Well-maintained, clean, and reliable</span>
+            <span>👔 Professional chauffeur available on request</span>
+          </div>
+          <div class="price" style="margin-top: 1.2rem;">KES 30,000 <small>/ day</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING CTA SECTION -->
+  <div class="container" id="booking">
+    <div class="cta-section">
+      <div class="cta-text">
+        <h2>Ready to reserve your ride?</h2>
+        <p>Secure any luxury vehicle instantly. Chauffeur option available. Call or book below.</p>
+        <div class="phone-number" style="background: rgba(255,255,240,0.08); margin-top: 12px; border-color: #f5b04260;">
+          📞 0717-460-979 (24/7 support)
+        </div>
+      </div>
+      <a href="#" class="btn-cta" id="openBookingBtn">📅 BOOK NOW →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">WELLS EXECUTIVE</div>
+        <div class="footer-links">
+          <a href="#">Home</a>
+          <a href="#full-fleet">Fleet</a>
+          <a href="#">Chauffeur</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="phone-number" style="background: transparent; padding:0; border:none; color:#cbd5e6;">
+          📞 0717-460-979
+        </div>
+      </div>
+      <div class="copyright">
+        © 2026 Wells Executive – Premium Luxury Car Hire. Experience comfort, class & reliability.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOKING MODAL -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-card">
+      <button class="close-modal" id="closeModalBtn">&times;</button>
+      <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem;">Request booking</h2>
+      <p style="margin-bottom: 1.2rem;">Fill in details & we’ll confirm your luxury ride.</p>
+      <form id="bookingForm">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; font-weight: 500;">Full name</label>
+          <input type="text" required style="width:100%; padding: 0.8rem; border-radius: 60px; border:1px solid #cbd5e1;">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; font-weight: 500;">Phone number</label>
+          <input type="tel" required style="width:100%; padding: 0.8rem; border-radius: 60px; border:1px solid #cbd5e1;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; font-weight: 500;">Select car</label>
+          <select id="carSelectModal" style="width:100%; padding: 0.8rem; border-radius: 60px; border:1px solid #cbd5e1;">
+            <option>Range Rover (KES 70,000)</option>
+            <option>Land Cruiser 200 Series (KES 30,000)</option>
+            <option>Lexus LX 570 (KES 70,000)</option>
+            <option>Land Cruiser Prado (KES 15,000)</option>
+            <option>Toyota Harrier (KES 8,500)</option>
+            <option>Mazda CX-5 (KES 8,500)</option>
+            <option>Mitsubishi Outlander (KES 8,000)</option>
+            <option>Toyota Crown (KES 9,000)</option>
+            <option>Toyota Noah (KES 7,000)</option>
+          </select>
+        </div>
+        <button type="submit" style="background:#f5b042; width:100%; border: none; padding: 0.9rem; border-radius: 60px; font-weight: 700; cursor: pointer;">Send request →</button>
+        <p style="font-size: 0.7rem; text-align: center; margin-top: 1rem;">We’ll reply within 30min</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // -------- FLEET DATA (exact from user) ----------
+    const fleetData = [
+      { name: "Range Rover", price: 70000, desc: "Supreme luxury SUV, perfect for executive travel & prestige.", tag: "Full-size Luxury" },
+      { name: "Land Cruiser 200 Series", price: 30000, desc: "The beast – off-road capability + executive comfort. Chauffeur ready.", tag: "Off-road Luxury" },
+      { name: "Lexus LX 570", price: 70000, desc: "Ultra-luxury ride with powerful V8 & quiet cabin.", tag: "Flagship SUV" },
+      { name: "Land Cruiser Prado", price: 15000, desc: "Reliable, spacious, and smooth for family or safari.", tag: "Adventure SUV" },
+      { name: "Toyota Harrier", price: 8500, desc: "Elegant crossover, modern interior & fuel efficient.", tag: "Executive Crossover" },
+      { name: "Mazda CX-5", price: 8500, desc: "Sporty design, responsive handling & premium feel.", tag: "Premium Crossover" },
+      { name: "Mitsubishi Outlander", price: 8000, desc: "Practical 7-seater, comfortable for group travel.", tag: "Family SUV" },
+      { name: "Toyota Crown", price: 9000, desc: "Classic executive sedan, refined and smooth ride.", tag: "Business Sedan" },
+      { name: "Toyota Noah", price: 7000, desc: "Spacious MPV, ideal for group transfers & family trips.", tag: "Minivan" }
+    ];
+
+    const fleetGrid = document.getElementById('fleetGrid');
+    if (fleetGrid) {
+      fleetData.forEach(car => {
+        const card = document.createElement('div');
+        card.className = 'car-card';
+        // simple dynamic icon
+        let icon = "🚙";
+        if (car.name.includes("Range")) icon = "🏔️✨";
+        if (car.name.includes("Cruiser 200")) icon = "🐾🔥";
+        if (car.name.includes("Lexus")) icon = "💎";
+        if (car.name.includes("Prado")) icon = "🌲";
+        if (car.name.includes("Harrier")) icon = "🦅";
+        if (car.name.includes("CX-5")) icon = "⚡";
+        if (car.name.includes("Outlander")) icon = "👨‍👩‍👧‍👦";
+        if (car.name.includes("Crown")) icon = "👑";
+        if (car.name.includes("Noah")) icon = "🚐";
+        
+        card.innerHTML = `
+          <div class="car-img">${icon}</div>
+          <div class="car-info">
+            <div class="badge-type">${car.tag}</div>
+            <h3>${car.name}</h3>
+            <p class="car-desc">${car.desc}</p>
+            <div class="price">KES ${car.price.toLocaleString()} <small>/ day</small></div>
+          </div>
+        `;
+        fleetGrid.appendChild(card);
+      });
+    }
+
+    // Modal logic
+    const modal = document.getElementById('bookingModal');
+    const openBtn = document.getElementById('openBookingBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const bookingForm = document.getElementById('bookingForm');
+
+    function openModal() {
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModalFunc() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    if (openBtn) {
+      openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+    if (closeBtn) closeBtn.addEventListener('click', closeModalFunc);
+    window.addEventListener('click', (e) => { if (e.target === modal) closeModalFunc(); });
+
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('✅ Booking request received! Wells Executive team will contact you shortly on 0717-460-979 or your number. Thank you for choosing luxury.');
+        closeModalFunc();
+        bookingForm.reset();
+      });
+    }
+
+    // smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === "#" || href === "") return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
