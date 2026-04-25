@@ -18,10 +18,8 @@
             overflow-x: hidden;
         }
 
-        /* Import Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-        /* Video Background */
         .video-background {
             position: fixed;
             top: 0;
@@ -32,7 +30,6 @@
             object-fit: cover;
         }
 
-        /* Dark Overlay for better text readability */
         .overlay {
             position: fixed;
             top: 0;
@@ -43,7 +40,6 @@
             z-index: -1;
         }
 
-        /* Main Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -52,7 +48,6 @@
             z-index: 1;
         }
 
-        /* Header Section */
         .header {
             text-align: center;
             margin-bottom: 3rem;
@@ -62,20 +57,17 @@
         .logo {
             font-size: 3rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
             background: linear-gradient(135deg, #D4AF37, #FFD700, #F5E6A3);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .tagline {
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 300;
-            letter-spacing: 1px;
         }
 
         .gold-divider {
@@ -85,7 +77,6 @@
             margin: 1rem auto;
         }
 
-        /* Experience Card */
         .experience-card {
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(15px);
@@ -99,13 +90,6 @@
             margin-right: auto;
         }
 
-        .experience-card p {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        /* Section Titles */
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -121,10 +105,8 @@
             text-align: center;
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 2rem;
-            font-size: 1rem;
         }
 
-        /* Vehicles Grid */
         .vehicles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -139,11 +121,10 @@
             overflow: hidden;
             border: 1px solid rgba(212, 175, 55, 0.3);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
         }
 
         .vehicle-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px);
             border-color: rgba(212, 175, 55, 0.8);
             box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
         }
@@ -153,21 +134,16 @@
             background-size: cover;
             background-position: center;
             position: relative;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            padding: 1rem;
+        }
+
+        .vehicle-details {
+            padding: 1.5rem;
         }
 
         .vehicle-name {
             font-size: 1.6rem;
             font-weight: 700;
-            color: #fff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-        }
-
-        .vehicle-details {
-            padding: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .price {
@@ -191,7 +167,7 @@
 
         .features {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
@@ -219,11 +195,10 @@
         }
 
         .btn-book:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
             box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
         }
 
-        /* Contact Section */
         .contact-section {
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(15px);
@@ -259,17 +234,14 @@
             text-decoration: none;
             font-weight: 700;
             border-radius: 50px;
-            margin-top: 1rem;
+            margin: 0.5rem;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
         }
 
         .cta-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.5);
         }
 
-        /* Form Section */
         .form-section {
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(15px);
@@ -317,108 +289,49 @@
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        /* Footer */
         .footer {
             text-align: center;
             padding: 2rem;
             color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             margin-top: 2rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            .logo {
-                font-size: 2rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .phone-number {
-                font-size: 1.5rem;
-            }
-            .vehicles-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Car Image Placeholders (using gradients + icons as fallback) */
-        .vehicle-image {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            position: relative;
-        }
-
-        .vehicle-image::before {
-            content: "🚗";
-            font-size: 4rem;
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            opacity: 0.5;
-        }
-
-        /* Specific car icons for visual distinction */
-        .range-rover::before { content: "🚙"; font-size: 5rem; }
-        .land-cruiser-200::before { content: "🚙"; }
-        .lexus::before { content: "🚗"; }
-        .prado::before { content: "🚙"; }
-        .harrier::before { content: "🚙"; }
-        .cx5::before { content: "🚗"; }
-        .outlander::before { content: "🚙"; }
-        .crown::before { content: "🚗"; }
-        .noah::before { content: "🚐"; }
-
-        .success-message {
-            background: rgba(74, 222, 128, 0.2);
-            border: 1px solid #4ade80;
-            border-radius: 12px;
-            padding: 1rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #4ade80;
+            .logo { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .phone-number { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- HIGH-QUALITY RANGE ROVER VIDEO BACKGROUND -->
 <video class="video-background" autoplay loop muted playsinline>
-    <source src="https://player.vimeo.com/external/434045467.sd.mp4?s=20cbfb3a6f0f3cbe1d9c47c8c5f2c1a487a0a3e8&profile_id=164" type="video/mp4">
-    <!-- Alternative premium Range Rover style video -->
-    <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-driving-on-desert-highway-39777-large.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    <source src="https://cdn.pixabay.com/video/2022/07/04/124624-726847766_large.mp4" type="video/mp4">
 </video>
 <div class="overlay"></div>
 
 <div class="container">
-    <!-- Header -->
     <div class="header">
         <div class="logo">WELLS EXECUTIVE</div>
         <div class="tagline">LUXURY CAR HIRE · NAIROBI · PREMIUM FLEET</div>
         <div class="gold-divider"></div>
     </div>
 
-    <!-- Experience Card -->
     <div class="experience-card">
         <p>✨ Experience comfort, class, and reliability with our premium fleet. ✨</p>
-        <p style="margin-top: 0.5rem; font-size: 0.95rem;">Well-maintained vehicles for business, travel, and special occasions</p>
+        <p style="margin-top: 0.5rem;">Well-maintained vehicles for business, travel, and special occasions</p>
     </div>
 
-    <!-- Available Units Section -->
     <h2 class="section-title">Our Executive Fleet</h2>
     <p class="section-subtitle">Choose your ride — Daily rates below</p>
 
     <div class="vehicles-grid">
         <!-- Range Rover -->
         <div class="vehicle-card">
-            <div class="vehicle-image range-rover"></div>
+            <div class="vehicle-image" style="background-image: url('images/range-rover.jpg');"></div>
             <div class="vehicle-details">
                 <div class="vehicle-name">Range Rover</div>
                 <div class="price">KES 70,000 <span>/ day</span></div>
@@ -426,7 +339,7 @@
                 <div class="features">
                     <span class="feature">WiFi</span>
                     <span class="feature">GPS</span>
-                    <span class="feature">Chauffeur Option</span>
+                    <span class="feature">Chauffeur</span>
                 </div>
                 <button class="btn-book" onclick="bookCar('Range Rover')">Book Now →</button>
             </div>
@@ -434,23 +347,23 @@
 
         <!-- Land Cruiser 200 Series -->
         <div class="vehicle-card">
-            <div class="vehicle-image land-cruiser-200"></div>
+            <div class="vehicle-image" style="background-image: url('images/land-cruiser-200.jpg');"></div>
             <div class="vehicle-details">
-                <div class="vehicle-name">Land Cruiser 200 Series</div>
+                <div class="vehicle-name">Land Cruiser 200</div>
                 <div class="price">KES 30,000 <span>/ day</span></div>
-                <div class="price-note">Off-Road Capable · Spacious 8-Seater</div>
+                <div class="price-note">Off-Road · 8-Seater · 4x4</div>
                 <div class="features">
                     <span class="feature">4x4</span>
                     <span class="feature">AC</span>
                     <span class="feature">Tow Bar</span>
                 </div>
-                <button class="btn-book" onclick="bookCar('Land Cruiser 200 Series')">Book Now →</button>
+                <button class="btn-book" onclick="bookCar('Land Cruiser 200')">Book Now →</button>
             </div>
         </div>
 
         <!-- Lexus LX 570 -->
         <div class="vehicle-card">
-            <div class="vehicle-image lexus"></div>
+            <div class="vehicle-image" style="background-image: url('images/lexus-lx570.jpg');"></div>
             <div class="vehicle-details">
                 <div class="vehicle-name">Lexus LX 570</div>
                 <div class="price">KES 70,000 <span>/ day</span></div>
@@ -458,7 +371,7 @@
                 <div class="features">
                     <span class="feature">Cooled Seats</span>
                     <span class="feature">Sunroof</span>
-                    <span class="feature">360 Camera</span>
+                    <span class="feature">360 Cam</span>
                 </div>
                 <button class="btn-book" onclick="bookCar('Lexus LX 570')">Book Now →</button>
             </div>
@@ -466,11 +379,11 @@
 
         <!-- Land Cruiser Prado -->
         <div class="vehicle-card">
-            <div class="vehicle-image prado"></div>
+            <div class="vehicle-image" style="background-image: url('images/prado.jpg');"></div>
             <div class="vehicle-details">
                 <div class="vehicle-name">Land Cruiser Prado</div>
                 <div class="price">KES 15,000 <span>/ day</span></div>
-                <div class="price-note">Reliable · Family-Friendly</div>
+                <div class="price-note">Reliable · Family-Friendly · 7 Seats</div>
                 <div class="features">
                     <span class="feature">7 Seats</span>
                     <span class="feature">Rear AC</span>
@@ -481,14 +394,14 @@
 
         <!-- Toyota Harrier -->
         <div class="vehicle-card">
-            <div class="vehicle-image harrier"></div>
+            <div class="vehicle-image" style="background-image: url('images/harrier.jpg');"></div>
             <div class="vehicle-details">
                 <div class="vehicle-name">Toyota Harrier</div>
                 <div class="price">KES 8,500 <span>/ day</span></div>
                 <div class="price-note">Elegant Crossover · Hybrid Option</div>
                 <div class="features">
-                    <span class="feature">Keyless Entry</span>
-                    <span class="feature">Backup Camera</span>
+                    <span class="feature">Keyless</span>
+                    <span class="feature">Backup Cam</span>
                 </div>
                 <button class="btn-book" onclick="bookCar('Toyota Harrier')">Book Now →</button>
             </div>
@@ -496,7 +409,7 @@
 
         <!-- Mazda CX-5 -->
         <div class="vehicle-card">
-            <div class="vehicle-image cx5"></div>
+            <div class="vehicle-image" style="background-image: url('images/cx5.jpg');"></div>
             <div class="vehicle-details">
                 <div class="vehicle-name">Mazda CX-5</div>
                 <div class="price">KES 8,500 <span>/ day</span></div>
@@ -511,7 +424,7 @@
 
         <!-- Mitsubishi Outlander -->
         <div class="vehicle-card">
-            <div class="vehicle-image outlander"></div>
+            <div class="vehicle-image" style="background-image: url('images/outlander.jpg');"></div>
             <div class="vehicle-details">
                 <div class="vehicle-name">Mitsubishi Outlander</div>
                 <div class="price">KES 8,000 <span>/ day</span></div>
@@ -526,14 +439,14 @@
 
         <!-- Toyota Crown -->
         <div class="vehicle-card">
-            <div class="vehicle-image crown"></div>
+            <div class="vehicle-image" style="background-image: url('images/crown.jpg');"></div>
             <div class="vehicle-details">
                 <div class="vehicle-name">Toyota Crown</div>
                 <div class="price">KES 9,000 <span>/ day</span></div>
                 <div class="price-note">Executive Sedan · Premium Comfort</div>
                 <div class="features">
                     <span class="feature">V6 Engine</span>
-                    <span class="feature">Ventilated Seats</span>
+                    <span class="feature">Ventilated</span>
                 </div>
                 <button class="btn-book" onclick="bookCar('Toyota Crown')">Book Now →</button>
             </div>
@@ -541,7 +454,7 @@
 
         <!-- Toyota Noah -->
         <div class="vehicle-card">
-            <div class="vehicle-image noah"></div>
+            <div class="vehicle-image" style="background-image: url('images/noah.jpg');"></div>
             <div class="vehicle-details">
                 <div class="vehicle-name">Toyota Noah</div>
                 <div class="price">KES 7,000 <span>/ day</span></div>
@@ -555,43 +468,36 @@
         </div>
     </div>
 
-    <!-- Contact & Booking Section -->
     <div class="contact-section">
         <h3>📞 Book with us today</h3>
         <p>for a seamless luxury experience</p>
         <div class="phone-number">0717-460-979</div>
-        <p style="margin-top: 0.5rem;">Call, SMS, or WhatsApp — 24/7 Support</p>
         <a href="tel:0717460979" class="cta-button">Call Now →</a>
-        <a href="https://wa.me/254717460979" class="cta-button" style="margin-left: 1rem; background: linear-gradient(135deg, #25D366, #128C7E);">WhatsApp →</a>
+        <a href="https://wa.me/254717460979" class="cta-button" style="background: linear-gradient(135deg, #25D366, #128C7E);">WhatsApp →</a>
     </div>
 
-    <!-- Quick Booking Form (Netlify Enabled) -->
     <div class="form-section">
         <h3 style="text-align: center; margin-bottom: 1rem;">Quick Booking Request</h3>
         <form name="car-hire-booking" method="POST" data-netlify="true" netlify>
-            <input type="hidden" name="form-name" value="car-hire-booking" />
-            
+            <input type="hidden" name="form-name" value="car-hire-booking">
             <div class="form-group">
                 <label>Full Name *</label>
                 <input type="text" name="name" required placeholder="John Mwangi">
             </div>
-            
             <div class="form-group">
                 <label>Phone Number *</label>
                 <input type="tel" name="phone" required placeholder="0717-460-979">
             </div>
-            
             <div class="form-group">
                 <label>Email Address</label>
                 <input type="email" name="email" placeholder="john@example.com">
             </div>
-            
             <div class="form-group">
                 <label>Select Vehicle *</label>
                 <select name="vehicle" required>
                     <option value="">Choose a vehicle</option>
                     <option>Range Rover - KES 70,000/day</option>
-                    <option>Land Cruiser 200 Series - KES 30,000/day</option>
+                    <option>Land Cruiser 200 - KES 30,000/day</option>
                     <option>Lexus LX 570 - KES 70,000/day</option>
                     <option>Land Cruiser Prado - KES 15,000/day</option>
                     <option>Toyota Harrier - KES 8,500/day</option>
@@ -601,30 +507,25 @@
                     <option>Toyota Noah - KES 7,000/day</option>
                 </select>
             </div>
-            
             <div class="form-group">
                 <label>Pickup Date *</label>
                 <input type="date" name="pickup_date" required>
             </div>
-            
             <div class="form-group">
                 <label>Number of Days *</label>
                 <input type="number" name="days" required min="1" placeholder="1">
             </div>
-            
             <div class="form-group">
                 <label>Special Requests</label>
-                <textarea name="message" rows="3" placeholder="Chauffeur? Airport pickup? Additional info..."></textarea>
+                <textarea name="message" rows="3" placeholder="Chauffeur? Airport pickup?"></textarea>
             </div>
-            
-            <button type="submit">Submit Booking Request →</button>
+            <button type="submit">Submit Booking →</button>
         </form>
-        <p style="text-align: center; font-size: 0.75rem; margin-top: 1rem; opacity: 0.6;">We'll respond within 30 minutes</p>
     </div>
 
     <div class="footer">
         <p>© 2026 WELLS EXECUTIVE LUXURY CAR HIRE — Nairobi, Kenya</p>
-        <p style="margin-top: 0.5rem;">Premium Fleet | 24/7 Support | Well-Maintained Vehicles</p>
+        <p>Premium Fleet | 24/7 Support | Well-Maintained Vehicles</p>
     </div>
 </div>
 
@@ -640,17 +541,6 @@
             }
         }
         document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Success message on form submit
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('form') === 'car-hire-booking' && urlParams.has('submitted')) {
-        const formSection = document.querySelector('.form-section');
-        const successDiv = document.createElement('div');
-        successDiv.className = 'success-message';
-        successDiv.innerHTML = '✓ Thank you! Your booking request has been sent. We will contact you shortly at 0717-460-979 or via email.';
-        formSection.insertBefore(successDiv, formSection.firstChild);
-        window.history.replaceState({}, document.title, window.location.pathname);
     }
 </script>
 
